@@ -1,0 +1,955 @@
+[2021-05-29 01:48:41.537][1941751][info][main] [source/server/server.cc:339] initializing epoch 0 (base id=0, hot restart version=11.104)
+[2021-05-29 01:48:41.537][1941751][info][main] [source/server/server.cc:341] statically linked extensions:
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.resource_monitors: envoy.resource_monitors.fixed_heap, envoy.resource_monitors.injected_resource
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.thrift_proxy.filters: envoy.filters.thrift.rate_limit, envoy.filters.thrift.router
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.internal_redirect_predicates: envoy.internal_redirect_predicates.allow_listed_routes, envoy.internal_redirect_predicates.previous_routes, envoy.internal_redirect_predicates.safe_cross_scheme
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.health_checkers: envoy.health_checkers.redis
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.rate_limit_descriptors: envoy.rate_limit_descriptors.expr
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.grpc_credentials: envoy.grpc_credentials.aws_iam, envoy.grpc_credentials.default, envoy.grpc_credentials.file_based_metadata
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.retry_priorities: envoy.retry_priorities.previous_priorities
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.http.stateful_header_formatters: preserve_case
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.tracers: envoy.dynamic.ot, envoy.lightstep, envoy.tracers.datadog, envoy.tracers.dynamic_ot, envoy.tracers.lightstep, envoy.tracers.opencensus, envoy.tracers.skywalking, envoy.tracers.xray, envoy.tracers.zipkin, envoy.zipkin
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.dubbo_proxy.serializers: dubbo.hessian2
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.matching.common_inputs: envoy.matching.common_inputs.environment_variable
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.filters.listener: envoy.filters.listener.http_inspector, envoy.filters.listener.original_dst, envoy.filters.listener.original_src, envoy.filters.listener.proxy_protocol, envoy.filters.listener.tls_inspector, envoy.listener.http_inspector, envoy.listener.original_dst, envoy.listener.original_src, envoy.listener.proxy_protocol, envoy.listener.tls_inspector
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.matching.action: composite-action, skip
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.dubbo_proxy.protocols: dubbo
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.thrift_proxy.transports: auto, framed, header, unframed
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.request_id: envoy.request_id.uuid
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.matching.http.input: request-headers, request-trailers, response-headers, response-trailers
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.filters.udp_listener: envoy.filters.udp.dns_filter, envoy.filters.udp_listener.udp_proxy
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.bootstrap: envoy.bootstrap.wasm, envoy.extensions.network.socket_interface.default_socket_interface
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.clusters: envoy.cluster.eds, envoy.cluster.logical_dns, envoy.cluster.original_dst, envoy.cluster.static, envoy.cluster.strict_dns, envoy.clusters.aggregate, envoy.clusters.dynamic_forward_proxy, envoy.clusters.redis
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.dubbo_proxy.filters: envoy.filters.dubbo.router
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.wasm.runtime: envoy.wasm.runtime.null, envoy.wasm.runtime.v8
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.thrift_proxy.protocols: auto, binary, binary/non-strict, compact, twitter
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.matching.input_matchers: envoy.matching.matchers.consistent_hashing
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.compression.decompressor: envoy.compression.brotli.decompressor, envoy.compression.gzip.decompressor
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.transport_sockets.upstream: envoy.transport_sockets.alts, envoy.transport_sockets.quic, envoy.transport_sockets.raw_buffer, envoy.transport_sockets.starttls, envoy.transport_sockets.tap, envoy.transport_sockets.tls, envoy.transport_sockets.upstream_proxy_protocol, raw_buffer, starttls, tls
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.http.original_ip_detection: envoy.http.original_ip_detection.custom_header, envoy.http.original_ip_detection.xff
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.retry_host_predicates: envoy.retry_host_predicates.omit_canary_hosts, envoy.retry_host_predicates.omit_host_metadata, envoy.retry_host_predicates.previous_hosts
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.http.cache: envoy.extensions.http.cache.simple
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.filters.network: envoy.client_ssl_auth, envoy.echo, envoy.ext_authz, envoy.filters.network.client_ssl_auth, envoy.filters.network.direct_response, envoy.filters.network.dubbo_proxy, envoy.filters.network.echo, envoy.filters.network.ext_authz, envoy.filters.network.http_connection_manager, envoy.filters.network.kafka_broker, envoy.filters.network.local_ratelimit, envoy.filters.network.mongo_proxy, envoy.filters.network.mysql_proxy, envoy.filters.network.postgres_proxy, envoy.filters.network.ratelimit, envoy.filters.network.rbac, envoy.filters.network.redis_proxy, envoy.filters.network.rocketmq_proxy, envoy.filters.network.sni_cluster, envoy.filters.network.sni_dynamic_forward_proxy, envoy.filters.network.tcp_proxy, envoy.filters.network.thrift_proxy, envoy.filters.network.wasm, envoy.filters.network.zookeeper_proxy, envoy.http_connection_manager, envoy.mongo_proxy, envoy.ratelimit, envoy.redis_proxy, envoy.tcp_proxy
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.access_loggers: envoy.access_loggers.file, envoy.access_loggers.http_grpc, envoy.access_loggers.open_telemetry, envoy.access_loggers.stderr, envoy.access_loggers.stdout, envoy.access_loggers.tcp_grpc, envoy.access_loggers.wasm, envoy.file_access_log, envoy.http_grpc_access_log, envoy.open_telemetry_access_log, envoy.stderr_access_log, envoy.stdout_access_log, envoy.tcp_grpc_access_log, envoy.wasm_access_log
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.guarddog_actions: envoy.watchdog.abort_action, envoy.watchdog.profile_action
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.stats_sinks: envoy.dog_statsd, envoy.metrics_service, envoy.stat_sinks.dog_statsd, envoy.stat_sinks.hystrix, envoy.stat_sinks.metrics_service, envoy.stat_sinks.statsd, envoy.stat_sinks.wasm, envoy.statsd
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.tls.cert_validator: envoy.tls.cert_validator.default, envoy.tls.cert_validator.spiffe
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.upstream_options: envoy.extensions.upstreams.http.v3.HttpProtocolOptions, envoy.upstreams.http.http_protocol_options
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.transport_sockets.downstream: envoy.transport_sockets.alts, envoy.transport_sockets.quic, envoy.transport_sockets.raw_buffer, envoy.transport_sockets.starttls, envoy.transport_sockets.tap, envoy.transport_sockets.tls, raw_buffer, starttls, tls
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.dubbo_proxy.route_matchers: default
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.filters.http: envoy.bandwidth_limit, envoy.buffer, envoy.cors, envoy.csrf, envoy.ext_authz, envoy.ext_proc, envoy.fault, envoy.filters.http.adaptive_concurrency, envoy.filters.http.admission_control, envoy.filters.http.aws_lambda, envoy.filters.http.aws_request_signing, envoy.filters.http.bandwidth_limit, envoy.filters.http.buffer, envoy.filters.http.cache, envoy.filters.http.cdn_loop, envoy.filters.http.composite, envoy.filters.http.compressor, envoy.filters.http.cors, envoy.filters.http.csrf, envoy.filters.http.decompressor, envoy.filters.http.dynamic_forward_proxy, envoy.filters.http.dynamo, envoy.filters.http.ext_authz, envoy.filters.http.ext_proc, envoy.filters.http.fault, envoy.filters.http.grpc_http1_bridge, envoy.filters.http.grpc_http1_reverse_bridge, envoy.filters.http.grpc_json_transcoder, envoy.filters.http.grpc_stats, envoy.filters.http.grpc_web, envoy.filters.http.gzip, envoy.filters.http.header_to_metadata, envoy.filters.http.health_check, envoy.filters.http.ip_tagging, envoy.filters.http.jwt_authn, envoy.filters.http.local_ratelimit, envoy.filters.http.lua, envoy.filters.http.oauth2, envoy.filters.http.on_demand, envoy.filters.http.original_src, envoy.filters.http.ratelimit, envoy.filters.http.rbac, envoy.filters.http.router, envoy.filters.http.set_metadata, envoy.filters.http.squash, envoy.filters.http.tap, envoy.filters.http.wasm, envoy.grpc_http1_bridge, envoy.grpc_json_transcoder, envoy.grpc_web, envoy.gzip, envoy.health_check, envoy.http_dynamo_filter, envoy.ip_tagging, envoy.local_rate_limit, envoy.lua, envoy.rate_limit, envoy.router, envoy.squash, match-wrapper
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.compression.compressor: envoy.compression.brotli.compressor, envoy.compression.gzip.compressor
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.resolvers: envoy.ip
+[2021-05-29 01:48:41.538][1941751][info][main] [source/server/server.cc:343]   envoy.upstreams: envoy.filters.connection_pools.tcp.generic
+[2021-05-29 01:48:41.594][1941751][info][main] [source/server/server.cc:359] HTTP header map info:
+[2021-05-29 01:48:41.597][1941751][debug][runtime] [source/common/runtime/runtime_features.cc:31] Unable to use runtime singleton for feature envoy.http.headermap.lazy_map_min_size
+[2021-05-29 01:48:41.597][1941751][debug][runtime] [source/common/runtime/runtime_features.cc:20] Unable to use runtime singleton for feature envoy.reloadable_features.header_map_correctly_coalesce_cookies
+[2021-05-29 01:48:41.597][1941751][debug][runtime] [source/common/runtime/runtime_features.cc:31] Unable to use runtime singleton for feature envoy.http.headermap.lazy_map_min_size
+[2021-05-29 01:48:41.597][1941751][debug][runtime] [source/common/runtime/runtime_features.cc:20] Unable to use runtime singleton for feature envoy.reloadable_features.header_map_correctly_coalesce_cookies
+[2021-05-29 01:48:41.599][1941751][debug][runtime] [source/common/runtime/runtime_features.cc:31] Unable to use runtime singleton for feature envoy.http.headermap.lazy_map_min_size
+[2021-05-29 01:48:41.599][1941751][debug][runtime] [source/common/runtime/runtime_features.cc:20] Unable to use runtime singleton for feature envoy.reloadable_features.header_map_correctly_coalesce_cookies
+[2021-05-29 01:48:41.599][1941751][debug][runtime] [source/common/runtime/runtime_features.cc:31] Unable to use runtime singleton for feature envoy.http.headermap.lazy_map_min_size
+[2021-05-29 01:48:41.599][1941751][debug][runtime] [source/common/runtime/runtime_features.cc:20] Unable to use runtime singleton for feature envoy.reloadable_features.header_map_correctly_coalesce_cookies
+[2021-05-29 01:48:41.599][1941751][info][main] [source/server/server.cc:362]   request header map: 632 bytes: :authority,:method,:path,:protocol,:scheme,accept,accept-encoding,access-control-request-method,authentication,authorization,cache-control,cdn-loop,connection,content-encoding,content-length,content-type,expect,grpc-accept-encoding,grpc-timeout,if-match,if-modified-since,if-none-match,if-range,if-unmodified-since,keep-alive,origin,pragma,proxy-connection,referer,te,transfer-encoding,upgrade,user-agent,via,x-client-trace-id,x-envoy-attempt-count,x-envoy-decorator-operation,x-envoy-downstream-service-cluster,x-envoy-downstream-service-node,x-envoy-expected-rq-timeout-ms,x-envoy-external-address,x-envoy-force-trace,x-envoy-hedge-on-per-try-timeout,x-envoy-internal,x-envoy-ip-tags,x-envoy-max-retries,x-envoy-original-path,x-envoy-original-url,x-envoy-retriable-header-names,x-envoy-retriable-status-codes,x-envoy-retry-grpc-on,x-envoy-retry-on,x-envoy-upstream-alt-stat-name,x-envoy-upstream-rq-per-try-timeout-ms,x-envoy-upstream-rq-timeout-alt-response,x-envoy-upstream-rq-timeout-ms,x-forwarded-client-cert,x-forwarded-for,x-forwarded-proto,x-ot-span-context,x-request-id
+[2021-05-29 01:48:41.599][1941751][info][main] [source/server/server.cc:362]   request trailer map: 144 bytes: 
+[2021-05-29 01:48:41.599][1941751][info][main] [source/server/server.cc:362]   response header map: 440 bytes: :status,access-control-allow-credentials,access-control-allow-headers,access-control-allow-methods,access-control-allow-origin,access-control-expose-headers,access-control-max-age,age,cache-control,connection,content-encoding,content-length,content-type,date,etag,expires,grpc-message,grpc-status,keep-alive,last-modified,location,proxy-connection,server,transfer-encoding,upgrade,vary,via,x-envoy-attempt-count,x-envoy-decorator-operation,x-envoy-degraded,x-envoy-immediate-health-check-fail,x-envoy-ratelimited,x-envoy-upstream-canary,x-envoy-upstream-healthchecked-cluster,x-envoy-upstream-service-time,x-request-id
+[2021-05-29 01:48:41.599][1941751][info][main] [source/server/server.cc:362]   response trailer map: 168 bytes: grpc-message,grpc-status
+[2021-05-29 01:48:41.612][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.shrink_heap.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.reduce_timeouts.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.stop_accepting_connections.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.reject_incoming_connections.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.reduce_timeouts.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.stop_accepting_connections.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.reject_incoming_connections.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.reduce_timeouts.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.stop_accepting_connections.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.reject_incoming_connections.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.reduce_timeouts.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.stop_accepting_connections.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.reject_incoming_connections.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.reduce_timeouts.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.stop_accepting_connections.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.reject_incoming_connections.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.reduce_timeouts.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.stop_accepting_connections.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.reject_incoming_connections.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.reduce_timeouts.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.stop_accepting_connections.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.reject_incoming_connections.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.reduce_timeouts.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.stop_accepting_connections.
+[2021-05-29 01:48:41.613][1941751][debug][main] [source/server/overload_manager_impl.cc:368] No overload action is configured for envoy.overload_actions.reject_incoming_connections.
+[2021-05-29 01:48:41.614][1941751][info][admin] [source/server/admin/admin.cc:134] admin address: 0.0.0.0:9901
+[2021-05-29 01:48:41.616][1941751][info][main] [source/server/server.cc:675] runtime: layers:
+  - name: static-layer
+    static_layer:
+      envoy:
+        reloadable_features:
+          experimental_matching_api: true
+[2021-05-29 01:48:41.618][1941751][info][config] [source/server/configuration_impl.cc:128] loading tracing configuration
+[2021-05-29 01:48:41.618][1941751][info][config] [source/server/configuration_impl.cc:88] loading 0 static secret(s)
+[2021-05-29 01:48:41.618][1941751][info][config] [source/server/configuration_impl.cc:94] loading 1 cluster(s)
+[2021-05-29 01:48:41.620][1941756][debug][grpc] [source/common/grpc/google_async_client_impl.cc:50] completionThread running
+[2021-05-29 01:48:41.630][1941751][debug][upstream] [source/common/upstream/upstream_impl.cc:278] transport socket match, socket default selected for host with address 0.0.0.0:9001
+[2021-05-29 01:48:41.630][1941751][debug][upstream] [source/common/upstream/strict_dns_cluster.cc:149] DNS hosts have changed for 0.0.0.0
+[2021-05-29 01:48:41.630][1941751][debug][upstream] [source/common/upstream/strict_dns_cluster.cc:170] DNS refresh rate reset for 0.0.0.0, refresh rate 5000 ms
+[2021-05-29 01:48:41.630][1941751][debug][upstream] [source/common/upstream/upstream_impl.cc:1086] initializing Primary cluster httpbin completed
+[2021-05-29 01:48:41.630][1941751][debug][init] [source/common/init/manager_impl.cc:49] init manager Cluster httpbin contains no targets
+[2021-05-29 01:48:41.630][1941751][debug][init] [source/common/init/watcher_impl.cc:14] init manager Cluster httpbin initialized, notifying ClusterImplBase
+[2021-05-29 01:48:41.630][1941751][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:982] adding TLS cluster httpbin
+[2021-05-29 01:48:41.631][1941751][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:1236] membership update for TLS cluster httpbin added 1 removed 0
+[2021-05-29 01:48:41.631][1941751][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:135] cm init: init complete: cluster=httpbin primary=0 secondary=0
+[2021-05-29 01:48:41.631][1941751][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:155] maybe finish initialize state: 0
+[2021-05-29 01:48:41.631][1941751][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:101] cm init: adding: cluster=httpbin primary=0 secondary=0
+[2021-05-29 01:48:41.631][1941751][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:155] maybe finish initialize state: 1
+[2021-05-29 01:48:41.631][1941751][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:164] maybe finish initialize primary init clusters empty: true
+[2021-05-29 01:48:41.631][1941751][info][config] [source/server/configuration_impl.cc:98] loading 1 listener(s)
+[2021-05-29 01:48:41.631][1941751][debug][config] [source/server/configuration_impl.cc:100] listener #0:
+[2021-05-29 01:48:41.633][1941751][debug][config] [source/server/listener_manager_impl.cc:395] begin add/update listener: name=main hash=6534995242896583702
+[2021-05-29 01:48:41.633][1941751][debug][config] [source/server/listener_manager_impl.cc:432] use full listener update path for listener name=main hash=6534995242896583702
+[2021-05-29 01:48:41.633][1941751][debug][config] [source/server/listener_manager_impl.cc:95]   filter #0:
+[2021-05-29 01:48:41.633][1941751][debug][config] [source/server/listener_manager_impl.cc:96]     name: envoy.http_connection_manager
+[2021-05-29 01:48:41.635][1941751][debug][config] [source/server/listener_manager_impl.cc:102]   config: {"@type":"type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager","route_config":{"name":"httpbin","virtual_hosts":[{"domains":["*"],"routes":[{"route":{"cluster":"httpbin"},"match":{"prefix":"/"}}],"name":"httpbin"}]},"http_filters":[{"name":"composite","typed_config":{"@type":"type.googleapis.com/envoy.extensions.common.matching.v3.ExtensionWithMatcher","extension_config":{"typed_config":{"@type":"type.googleapis.com/envoy.extensions.filters.http.composite.v3.Composite"},"name":"composite"},"matcher":{"matcher_tree":{"input":{"name":"request-headers","typed_config":{"@type":"type.googleapis.com/envoy.type.matcher.v3.HttpRequestHeaderMatchInput","header_name":"switch"}},"exact_match_map":{"map":{"wasm":{"action":{"typed_config":{"@type":"type.googleapis.com/envoy.extensions.filters.http.composite.v3.ExecuteFilterAction","typed_config":{"typed_config":{"@type":"type.googleapis.com/envoy.extensions.filters.http.wasm.v3.Wasm","config":{"name":"param-exchange","root_id":"param-exchange","vm_config":{"code":{"local":{"filename":"./param-exchange.wasm"}},"allow_precompiled":true,"runtime":"envoy.wasm.runtime.v8"},"configuration":{"@type":"type.googleapis.com/google.protobuf.StringValue","value":"{\"update_param_list\": [\n    {\n        \"old_request\": {\n            \"location\": \"query_parameter\", \n            \"key\": \"source1\"\n        }, \n        \"new_request\": {\n            \"location\": \"query_parameter\", \n            \"key\": \"replace1\"\n        }\n    }, \n    {\n        \"old_request\": {\n            \"location\": \"query_parameter\", \n            \"key\": \"source2\"\n        }, \n        \"new_request\": {\n            \"location\": \"query_parameter\", \n            \"key\": \"replace2\"\n        }\n    }\n], \n\"delete_param_list\": [\n    {\n        \"request\": {\n            \"location\": \"cookie\", \n            \"key\": \"destination3\"\n        }\n    }, \n    {\n        \"request\": {\n            \"location\": \"cookie\", \n            \"key\": \"destination4\"\n        }\n    }\n], \n\"add_param_list\": [\n     {\n         \"request\": {\n             \"location\": \"header\", \n              \"key\": \"add1\"\n          }, \n          \"value\": \"true\"\n      }, \n      {\n          \"request\": {\n              \"location\": \"header\", \n              \"key\": \"add2\"\n          }, \n          \"value\": \"true\"\n      }, \n      {\n          \"request\": {\n              \"location\": \"header\", \n              \"key\": \"add3\"\n          }, \n          \"value\": \"true\"\n      }\n  ]}\n"}}},"name":"envoy.filters.http.wasm"}},"name":"composite-action"}}}}}}}},{"name":"envoy.filters.http.router"}],"codec_type":"AUTO","stat_prefix":"ingress_http"}
+[2021-05-29 01:48:41.654][1941751][debug][config] [source/extensions/filters/network/http_connection_manager/config.cc:602]     http filter #0
+[2021-05-29 01:48:41.672][1941751][warning][config] [bazel-out/k8-fastbuild/bin/include/envoy/registry/_virtual_includes/registry/envoy/registry/registry.h:367] Double registration for type: 'envoy.type.matcher.v3.HttpRequestTrailerMatchInput' by 'request-trailers' and 'response-trailers'
+[2021-05-29 01:48:41.680][1941751][debug][wasm] [source/extensions/common/wasm/wasm.cc:103] Base Wasm created 1 now active
+[2021-05-29 01:48:41.704][1941751][debug][wasm] [source/extensions/common/wasm/wasm.cc:116] Thread-Local Wasm created 2 now active
+[2021-05-29 01:48:41.705][1941751][debug][wasm] [source/extensions/common/wasm/wasm.cc:160] ~Wasm 1 remaining active
+[2021-05-29 01:48:41.708][1941751][debug][wasm] [source/extensions/common/wasm/wasm.cc:116] Thread-Local Wasm created 2 now active
+[2021-05-29 01:48:41.710][1941751][debug][config] [source/extensions/filters/network/http_connection_manager/config.cc:631]       name: composite
+[2021-05-29 01:48:41.711][1941751][debug][config] [source/extensions/filters/network/http_connection_manager/config.cc:638]     config: {
+ "@type": "type.googleapis.com/envoy.extensions.common.matching.v3.ExtensionWithMatcher",
+ "extension_config": {
+  "typed_config": {
+   "@type": "type.googleapis.com/envoy.extensions.filters.http.composite.v3.Composite"
+  },
+  "name": "composite"
+ },
+ "matcher": {
+  "matcher_tree": {
+   "input": {
+    "name": "request-headers",
+    "typed_config": {
+     "@type": "type.googleapis.com/envoy.type.matcher.v3.HttpRequestHeaderMatchInput",
+     "header_name": "switch"
+    }
+   },
+   "exact_match_map": {
+    "map": {
+     "wasm": {
+      "action": {
+       "typed_config": {
+        "@type": "type.googleapis.com/envoy.extensions.filters.http.composite.v3.ExecuteFilterAction",
+        "typed_config": {
+         "typed_config": {
+          "@type": "type.googleapis.com/envoy.extensions.filters.http.wasm.v3.Wasm",
+          "config": {
+           "name": "param-exchange",
+           "root_id": "param-exchange",
+           "vm_config": {
+            "code": {
+             "local": {
+              "filename": "./param-exchange.wasm"
+             }
+            },
+            "allow_precompiled": true,
+            "runtime": "envoy.wasm.runtime.v8"
+           },
+           "configuration": {
+            "@type": "type.googleapis.com/google.protobuf.StringValue",
+            "value": "{\"update_param_list\": [\n    {\n        \"old_request\": {\n            \"location\": \"query_parameter\", \n            \"key\": \"source1\"\n        }, \n        \"new_request\": {\n            \"location\": \"query_parameter\", \n            \"key\": \"replace1\"\n        }\n    }, \n    {\n        \"old_request\": {\n            \"location\": \"query_parameter\", \n            \"key\": \"source2\"\n        }, \n        \"new_request\": {\n            \"location\": \"query_parameter\", \n            \"key\": \"replace2\"\n        }\n    }\n], \n\"delete_param_list\": [\n    {\n        \"request\": {\n            \"location\": \"cookie\", \n            \"key\": \"destination3\"\n        }\n    }, \n    {\n        \"request\": {\n            \"location\": \"cookie\", \n            \"key\": \"destination4\"\n        }\n    }\n], \n\"add_param_list\": [\n     {\n         \"request\": {\n             \"location\": \"header\", \n              \"key\": \"add1\"\n          }, \n          \"value\": \"true\"\n      }, \n      {\n          \"request\": {\n              \"location\": \"header\", \n              \"key\": \"add2\"\n          }, \n          \"value\": \"true\"\n      }, \n      {\n          \"request\": {\n              \"location\": \"header\", \n              \"key\": \"add3\"\n          }, \n          \"value\": \"true\"\n      }\n  ]}\n"
+           }
+          }
+         },
+         "name": "envoy.filters.http.wasm"
+        }
+       },
+       "name": "composite-action"
+      }
+     }
+    }
+   }
+  }
+ }
+}
+
+[2021-05-29 01:48:41.711][1941751][debug][config] [source/extensions/filters/network/http_connection_manager/config.cc:602]     http filter #1
+[2021-05-29 01:48:41.712][1941751][debug][config] [source/extensions/filters/network/http_connection_manager/config.cc:631]       name: envoy.filters.http.router
+[2021-05-29 01:48:41.712][1941751][debug][config] [source/extensions/filters/network/http_connection_manager/config.cc:638]     config: {}
+
+[2021-05-29 01:48:41.714][1941751][debug][config] [source/server/filter_chain_manager_impl.cc:228] new fc_contexts has 1 filter chains, including 1 newly built
+[2021-05-29 01:48:41.714][1941751][debug][init] [source/common/init/manager_impl.cc:24] added target Listener-init-target main to init manager Server
+[2021-05-29 01:48:41.714][1941751][debug][config] [source/server/listener_impl.cc:134] Create listen socket for listener main on address 0.0.0.0:18000
+[2021-05-29 01:48:41.714][1941751][debug][config] [source/server/listener_impl.cc:124] Set listener main socket factory local address to 0.0.0.0:18000
+[2021-05-29 01:48:41.714][1941751][debug][config] [source/server/listener_impl.cc:689] add active listener: name=main, hash=6534995242896583702, address=0.0.0.0:18000
+[2021-05-29 01:48:41.714][1941751][info][config] [source/server/configuration_impl.cc:110] loading stats configuration
+[2021-05-29 01:48:41.714][1941751][debug][init] [source/common/init/manager_impl.cc:49] init manager RTDS contains no targets
+[2021-05-29 01:48:41.714][1941751][debug][init] [source/common/init/watcher_impl.cc:14] init manager RTDS initialized, notifying RTDS
+[2021-05-29 01:48:41.714][1941751][info][runtime] [source/common/runtime/runtime_impl.cc:449] RTDS has finished initialization
+[2021-05-29 01:48:41.714][1941751][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:224] continue initializing secondary clusters
+[2021-05-29 01:48:41.714][1941751][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:155] maybe finish initialize state: 2
+[2021-05-29 01:48:41.714][1941751][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:164] maybe finish initialize primary init clusters empty: true
+[2021-05-29 01:48:41.714][1941751][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:179] maybe finish initialize secondary init clusters empty: true
+[2021-05-29 01:48:41.714][1941751][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:200] maybe finish initialize cds api ready: false
+[2021-05-29 01:48:41.714][1941751][info][upstream] [source/common/upstream/cluster_manager_impl.cc:206] cm init: all clusters initialized
+[2021-05-29 01:48:41.714][1941751][warning][main] [source/server/server.cc:650] there is no configured limit to the number of allowed active connections. Set a limit via the runtime key overload.global_downstream_max_connections
+[2021-05-29 01:48:41.715][1941751][info][main] [source/server/server.cc:753] all clusters initialized. initializing init manager
+[2021-05-29 01:48:41.715][1941751][debug][init] [source/common/init/manager_impl.cc:53] init manager Server initializing
+[2021-05-29 01:48:41.715][1941751][debug][init] [source/common/init/target_impl.cc:15] init manager Server initializing target Listener-init-target main
+[2021-05-29 01:48:41.715][1941751][debug][init] [source/common/init/manager_impl.cc:49] init manager Listener-local-init-manager main 6534995242896583702 contains no targets
+[2021-05-29 01:48:41.715][1941751][debug][init] [source/common/init/watcher_impl.cc:14] init manager Listener-local-init-manager main 6534995242896583702 initialized, notifying Listener-local-init-watcher main
+[2021-05-29 01:48:41.715][1941751][debug][init] [source/common/init/watcher_impl.cc:14] target Listener-init-target main initialized, notifying init manager Server
+[2021-05-29 01:48:41.715][1941751][debug][init] [source/common/init/watcher_impl.cc:14] init manager Server initialized, notifying RunHelper
+[2021-05-29 01:48:41.715][1941751][info][config] [source/server/listener_manager_impl.cc:831] all dependencies initialized. starting workers
+[2021-05-29 01:48:41.715][1941751][debug][config] [source/server/listener_manager_impl.cc:842] starting worker 0
+[2021-05-29 01:48:41.715][1941751][debug][config] [source/server/listener_manager_impl.cc:842] starting worker 1
+[2021-05-29 01:48:41.715][1941766][debug][main] [source/server/worker_impl.cc:131] worker entering dispatch loop
+[2021-05-29 01:48:41.715][1941767][debug][main] [source/server/worker_impl.cc:131] worker entering dispatch loop
+[2021-05-29 01:48:41.715][1941751][debug][config] [source/server/listener_manager_impl.cc:842] starting worker 2
+[2021-05-29 01:48:41.715][1941768][debug][grpc] [source/common/grpc/google_async_client_impl.cc:50] completionThread running
+[2021-05-29 01:48:41.715][1941751][debug][config] [source/server/listener_manager_impl.cc:842] starting worker 3
+[2021-05-29 01:48:41.715][1941769][debug][main] [source/server/worker_impl.cc:131] worker entering dispatch loop
+[2021-05-29 01:48:41.715][1941770][debug][grpc] [source/common/grpc/google_async_client_impl.cc:50] completionThread running
+[2021-05-29 01:48:41.715][1941766][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:982] adding TLS cluster httpbin
+[2021-05-29 01:48:41.715][1941767][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:982] adding TLS cluster httpbin
+[2021-05-29 01:48:41.715][1941751][debug][config] [source/server/listener_manager_impl.cc:842] starting worker 4
+[2021-05-29 01:48:41.715][1941769][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:982] adding TLS cluster httpbin
+[2021-05-29 01:48:41.716][1941751][debug][config] [source/server/listener_manager_impl.cc:842] starting worker 5
+[2021-05-29 01:48:41.716][1941774][debug][main] [source/server/worker_impl.cc:131] worker entering dispatch loop
+[2021-05-29 01:48:41.716][1941751][debug][config] [source/server/listener_manager_impl.cc:842] starting worker 6
+[2021-05-29 01:48:41.716][1941767][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:1236] membership update for TLS cluster httpbin added 1 removed 0
+[2021-05-29 01:48:41.716][1941766][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:1236] membership update for TLS cluster httpbin added 1 removed 0
+[2021-05-29 01:48:41.716][1941773][debug][main] [source/server/worker_impl.cc:131] worker entering dispatch loop
+[2021-05-29 01:48:41.716][1941769][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:1236] membership update for TLS cluster httpbin added 1 removed 0
+[2021-05-29 01:48:41.716][1941771][debug][main] [source/server/worker_impl.cc:131] worker entering dispatch loop
+[2021-05-29 01:48:41.716][1941751][debug][config] [source/server/listener_manager_impl.cc:842] starting worker 7
+[2021-05-29 01:48:41.716][1941774][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:982] adding TLS cluster httpbin
+[2021-05-29 01:48:41.716][1941773][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:982] adding TLS cluster httpbin
+[2021-05-29 01:48:41.716][1941751][info][main] [source/server/server.cc:772] starting main dispatch loop
+[2021-05-29 01:48:41.716][1941771][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:982] adding TLS cluster httpbin
+[2021-05-29 01:48:41.716][1941776][debug][grpc] [source/common/grpc/google_async_client_impl.cc:50] completionThread running
+[2021-05-29 01:48:41.716][1941772][debug][grpc] [source/common/grpc/google_async_client_impl.cc:50] completionThread running
+[2021-05-29 01:48:41.716][1941778][debug][grpc] [source/common/grpc/google_async_client_impl.cc:50] completionThread running
+[2021-05-29 01:48:41.716][1941779][debug][main] [source/server/worker_impl.cc:131] worker entering dispatch loop
+[2021-05-29 01:48:41.716][1941777][debug][grpc] [source/common/grpc/google_async_client_impl.cc:50] completionThread running
+[2021-05-29 01:48:41.716][1941775][debug][main] [source/server/worker_impl.cc:131] worker entering dispatch loop
+[2021-05-29 01:48:41.716][1941775][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:982] adding TLS cluster httpbin
+[2021-05-29 01:48:41.716][1941779][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:982] adding TLS cluster httpbin
+[2021-05-29 01:48:41.716][1941780][debug][grpc] [source/common/grpc/google_async_client_impl.cc:50] completionThread running
+[2021-05-29 01:48:41.716][1941781][debug][grpc] [source/common/grpc/google_async_client_impl.cc:50] completionThread running
+[2021-05-29 01:48:41.716][1941771][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:1236] membership update for TLS cluster httpbin added 1 removed 0
+[2021-05-29 01:48:41.716][1941774][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:1236] membership update for TLS cluster httpbin added 1 removed 0
+[2021-05-29 01:48:41.717][1941779][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:1236] membership update for TLS cluster httpbin added 1 removed 0
+[2021-05-29 01:48:41.717][1941773][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:1236] membership update for TLS cluster httpbin added 1 removed 0
+[2021-05-29 01:48:41.718][1941775][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:1236] membership update for TLS cluster httpbin added 1 removed 0
+[2021-05-29 01:48:41.720][1941767][debug][wasm] [source/extensions/common/wasm/wasm.cc:116] Thread-Local Wasm created 3 now active
+[2021-05-29 01:48:41.721][1941766][debug][wasm] [source/extensions/common/wasm/wasm.cc:116] Thread-Local Wasm created 4 now active
+[2021-05-29 01:48:41.721][1941769][debug][wasm] [source/extensions/common/wasm/wasm.cc:116] Thread-Local Wasm created 5 now active
+[2021-05-29 01:48:41.722][1941774][debug][wasm] [source/extensions/common/wasm/wasm.cc:116] Thread-Local Wasm created 6 now active
+[2021-05-29 01:48:41.722][1941771][debug][wasm] [source/extensions/common/wasm/wasm.cc:116] Thread-Local Wasm created 7 now active
+[2021-05-29 01:48:41.722][1941773][debug][wasm] [source/extensions/common/wasm/wasm.cc:116] Thread-Local Wasm created 8 now active
+[2021-05-29 01:48:41.723][1941779][debug][wasm] [source/extensions/common/wasm/wasm.cc:116] Thread-Local Wasm created 9 now active
+[2021-05-29 01:48:41.723][1941775][debug][wasm] [source/extensions/common/wasm/wasm.cc:116] Thread-Local Wasm created 10 now active
+[2021-05-29 01:48:46.629][1941751][debug][upstream] [source/common/upstream/upstream_impl.cc:278] transport socket match, socket default selected for host with address 0.0.0.0:9001
+[2021-05-29 01:48:46.629][1941751][debug][upstream] [source/common/upstream/strict_dns_cluster.cc:170] DNS refresh rate reset for 0.0.0.0, refresh rate 5000 ms
+[2021-05-29 01:48:46.713][1941751][debug][main] [source/server/server.cc:216] flushing stats
+[2021-05-29 01:48:51.634][1941751][debug][upstream] [source/common/upstream/upstream_impl.cc:278] transport socket match, socket default selected for host with address 0.0.0.0:9001
+[2021-05-29 01:48:51.634][1941751][debug][upstream] [source/common/upstream/strict_dns_cluster.cc:170] DNS refresh rate reset for 0.0.0.0, refresh rate 5000 ms
+[2021-05-29 01:48:51.719][1941751][debug][main] [source/server/server.cc:216] flushing stats
+[2021-05-29 01:48:54.861][1941771][debug][conn_handler] [source/server/active_tcp_listener.cc:324] [C0] new connection
+[2021-05-29 01:48:54.862][1941771][debug][http] [source/common/http/conn_manager_impl.cc:261] [C0] new stream
+[2021-05-29 01:48:54.862][1941771][debug][http] [source/common/http/conn_manager_impl.cc:874] [C0][S5851267462179303264] request headers complete (end_stream=true):
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'test'
+
+[2021-05-29 01:48:54.862][1941771][debug][http] [source/common/http/filter_manager.cc:802] [C0][S5851267462179303264] request end stream
+[2021-05-29 01:48:54.862][1941771][debug][matcher] [bazel-out/k8-fastbuild/bin/source/common/matcher/_virtual_includes/exact_map_matcher_lib/common/matcher/exact_map_matcher.h:21] Attempting to match data input: test
+[2021-05-29 01:48:54.862][1941771][debug][router] [source/common/router/router.cc:445] [C0][S5851267462179303264] cluster 'httpbin' match for URL '/'
+[2021-05-29 01:48:54.863][1941771][debug][router] [source/common/router/router.cc:631] [C0][S5851267462179303264] router decoding headers:
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+':scheme', 'http'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'test'
+'x-forwarded-proto', 'http'
+'x-request-id', 'fb0bbb84-2223-44e9-8731-3780d1a4a7d5'
+'x-envoy-expected-rq-timeout-ms', '15000'
+
+[2021-05-29 01:48:54.863][1941771][debug][pool] [source/common/http/conn_pool_base.cc:74] queueing stream due to no available connections
+[2021-05-29 01:48:54.863][1941771][debug][pool] [source/common/conn_pool/conn_pool_base.cc:245] trying to create new connection
+[2021-05-29 01:48:54.863][1941771][debug][pool] [source/common/conn_pool/conn_pool_base.cc:143] creating a new connection
+[2021-05-29 01:48:54.863][1941771][debug][client] [source/common/http/codec_client.cc:60] [C1] connecting
+[2021-05-29 01:48:54.863][1941771][debug][connection] [source/common/network/connection_impl.cc:860] [C1] connecting to 0.0.0.0:9001
+[2021-05-29 01:48:54.863][1941771][debug][connection] [source/common/network/connection_impl.cc:876] [C1] connection in progress
+[2021-05-29 01:48:54.863][1941771][debug][connection] [source/common/network/connection_impl.cc:665] [C1] connected
+[2021-05-29 01:48:54.863][1941771][debug][client] [source/common/http/codec_client.cc:88] [C1] connected
+[2021-05-29 01:48:54.863][1941771][debug][pool] [source/common/conn_pool/conn_pool_base.cc:289] [C1] attaching to next stream
+[2021-05-29 01:48:54.863][1941771][debug][pool] [source/common/conn_pool/conn_pool_base.cc:175] [C1] creating stream
+[2021-05-29 01:48:54.863][1941771][debug][router] [source/common/router/upstream_request.cc:371] [C0][S5851267462179303264] pool ready
+[2021-05-29 01:48:54.864][1941771][debug][router] [source/common/router/router.cc:1229] [C0][S5851267462179303264] upstream headers complete: end_stream=false
+[2021-05-29 01:48:54.865][1941771][debug][http] [source/common/http/conn_manager_impl.cc:1472] [C0][S5851267462179303264] encoding headers via codec (end_stream=false):
+':status', '200'
+'date', 'Fri, 28 May 2021 17:48:54 GMT'
+'content-length', '12'
+'content-type', 'text/plain; charset=utf-8'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+
+[2021-05-29 01:48:54.865][1941771][debug][client] [source/common/http/codec_client.cc:130] [C1] response complete
+[2021-05-29 01:48:54.865][1941771][debug][pool] [source/common/http/http1/conn_pool.cc:53] [C1] response complete
+[2021-05-29 01:48:54.865][1941771][debug][pool] [source/common/conn_pool/conn_pool_base.cc:204] [C1] destroying stream: 0 remaining
+[2021-05-29 01:48:54.865][1941771][debug][connection] [source/common/network/connection_impl.cc:633] [C0] remote close
+[2021-05-29 01:48:54.865][1941771][debug][connection] [source/common/network/connection_impl.cc:243] [C0] closing socket: 0
+[2021-05-29 01:48:54.865][1941771][debug][conn_handler] [source/server/active_tcp_listener.cc:75] [C0] adding to cleanup list
+[2021-05-29 01:48:56.633][1941751][debug][upstream] [source/common/upstream/upstream_impl.cc:278] transport socket match, socket default selected for host with address 0.0.0.0:9001
+[2021-05-29 01:48:56.633][1941751][debug][upstream] [source/common/upstream/strict_dns_cluster.cc:170] DNS refresh rate reset for 0.0.0.0, refresh rate 5000 ms
+[2021-05-29 01:48:56.718][1941751][debug][main] [source/server/server.cc:216] flushing stats
+[2021-05-29 01:49:01.638][1941751][debug][upstream] [source/common/upstream/upstream_impl.cc:278] transport socket match, socket default selected for host with address 0.0.0.0:9001
+[2021-05-29 01:49:01.638][1941751][debug][upstream] [source/common/upstream/strict_dns_cluster.cc:170] DNS refresh rate reset for 0.0.0.0, refresh rate 5000 ms
+[2021-05-29 01:49:01.724][1941751][debug][main] [source/server/server.cc:216] flushing stats
+[2021-05-29 01:49:03.315][1941775][debug][conn_handler] [source/server/active_tcp_listener.cc:324] [C2] new connection
+[2021-05-29 01:49:03.316][1941775][debug][http] [source/common/http/conn_manager_impl.cc:261] [C2] new stream
+[2021-05-29 01:49:03.316][1941775][debug][http] [source/common/http/conn_manager_impl.cc:874] [C2][S5875109613132954004] request headers complete (end_stream=true):
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+
+[2021-05-29 01:49:03.316][1941775][debug][http] [source/common/http/filter_manager.cc:802] [C2][S5875109613132954004] request end stream
+[2021-05-29 01:49:03.316][1941775][debug][matcher] [bazel-out/k8-fastbuild/bin/source/common/matcher/_virtual_includes/exact_map_matcher_lib/common/matcher/exact_map_matcher.h:21] Attempting to match data input: test
+[2021-05-29 01:49:03.316][1941775][debug][router] [source/common/router/router.cc:445] [C2][S5875109613132954004] cluster 'httpbin' match for URL '/'
+[2021-05-29 01:49:03.316][1941775][debug][router] [source/common/router/router.cc:631] [C2][S5875109613132954004] router decoding headers:
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+':scheme', 'http'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+'x-forwarded-proto', 'http'
+'x-request-id', 'c59d7bae-6c54-44e5-ae35-ff6e55902806'
+'x-envoy-expected-rq-timeout-ms', '15000'
+
+[2021-05-29 01:49:03.316][1941775][debug][pool] [source/common/http/conn_pool_base.cc:74] queueing stream due to no available connections
+[2021-05-29 01:49:03.316][1941775][debug][pool] [source/common/conn_pool/conn_pool_base.cc:245] trying to create new connection
+[2021-05-29 01:49:03.316][1941775][debug][pool] [source/common/conn_pool/conn_pool_base.cc:143] creating a new connection
+[2021-05-29 01:49:03.316][1941775][debug][client] [source/common/http/codec_client.cc:60] [C3] connecting
+[2021-05-29 01:49:03.316][1941775][debug][connection] [source/common/network/connection_impl.cc:860] [C3] connecting to 0.0.0.0:9001
+[2021-05-29 01:49:03.317][1941775][debug][connection] [source/common/network/connection_impl.cc:876] [C3] connection in progress
+[2021-05-29 01:49:03.317][1941775][debug][connection] [source/common/network/connection_impl.cc:665] [C3] connected
+[2021-05-29 01:49:03.317][1941775][debug][client] [source/common/http/codec_client.cc:88] [C3] connected
+[2021-05-29 01:49:03.317][1941775][debug][pool] [source/common/conn_pool/conn_pool_base.cc:289] [C3] attaching to next stream
+[2021-05-29 01:49:03.317][1941775][debug][pool] [source/common/conn_pool/conn_pool_base.cc:175] [C3] creating stream
+[2021-05-29 01:49:03.317][1941775][debug][router] [source/common/router/upstream_request.cc:371] [C2][S5875109613132954004] pool ready
+[2021-05-29 01:49:03.317][1941775][debug][router] [source/common/router/router.cc:1229] [C2][S5875109613132954004] upstream headers complete: end_stream=false
+[2021-05-29 01:49:03.317][1941775][debug][http] [source/common/http/conn_manager_impl.cc:1472] [C2][S5875109613132954004] encoding headers via codec (end_stream=false):
+':status', '200'
+'date', 'Fri, 28 May 2021 17:49:03 GMT'
+'content-length', '12'
+'content-type', 'text/plain; charset=utf-8'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+
+[2021-05-29 01:49:03.317][1941775][debug][client] [source/common/http/codec_client.cc:130] [C3] response complete
+[2021-05-29 01:49:03.318][1941775][debug][pool] [source/common/http/http1/conn_pool.cc:53] [C3] response complete
+[2021-05-29 01:49:03.318][1941775][debug][pool] [source/common/conn_pool/conn_pool_base.cc:204] [C3] destroying stream: 0 remaining
+[2021-05-29 01:49:03.318][1941775][debug][connection] [source/common/network/connection_impl.cc:633] [C2] remote close
+[2021-05-29 01:49:03.318][1941775][debug][connection] [source/common/network/connection_impl.cc:243] [C2] closing socket: 0
+[2021-05-29 01:49:03.318][1941775][debug][conn_handler] [source/server/active_tcp_listener.cc:75] [C2] adding to cleanup list
+[2021-05-29 01:49:06.278][1941779][debug][conn_handler] [source/server/active_tcp_listener.cc:324] [C4] new connection
+[2021-05-29 01:49:06.278][1941779][debug][http] [source/common/http/conn_manager_impl.cc:261] [C4] new stream
+[2021-05-29 01:49:06.278][1941779][debug][http] [source/common/http/conn_manager_impl.cc:874] [C4][S9209915673678627209] request headers complete (end_stream=true):
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+
+[2021-05-29 01:49:06.278][1941779][debug][http] [source/common/http/filter_manager.cc:802] [C4][S9209915673678627209] request end stream
+[2021-05-29 01:49:06.278][1941779][debug][matcher] [bazel-out/k8-fastbuild/bin/source/common/matcher/_virtual_includes/exact_map_matcher_lib/common/matcher/exact_map_matcher.h:21] Attempting to match data input: test
+[2021-05-29 01:49:06.278][1941779][debug][router] [source/common/router/router.cc:445] [C4][S9209915673678627209] cluster 'httpbin' match for URL '/'
+[2021-05-29 01:49:06.278][1941779][debug][router] [source/common/router/router.cc:631] [C4][S9209915673678627209] router decoding headers:
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+':scheme', 'http'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+'x-forwarded-proto', 'http'
+'x-request-id', 'd2738abc-7d76-4067-b437-ac91813950aa'
+'x-envoy-expected-rq-timeout-ms', '15000'
+
+[2021-05-29 01:49:06.278][1941779][debug][pool] [source/common/http/conn_pool_base.cc:74] queueing stream due to no available connections
+[2021-05-29 01:49:06.278][1941779][debug][pool] [source/common/conn_pool/conn_pool_base.cc:245] trying to create new connection
+[2021-05-29 01:49:06.278][1941779][debug][pool] [source/common/conn_pool/conn_pool_base.cc:143] creating a new connection
+[2021-05-29 01:49:06.279][1941779][debug][client] [source/common/http/codec_client.cc:60] [C5] connecting
+[2021-05-29 01:49:06.279][1941779][debug][connection] [source/common/network/connection_impl.cc:860] [C5] connecting to 0.0.0.0:9001
+[2021-05-29 01:49:06.279][1941779][debug][connection] [source/common/network/connection_impl.cc:876] [C5] connection in progress
+[2021-05-29 01:49:06.279][1941779][debug][connection] [source/common/network/connection_impl.cc:665] [C5] connected
+[2021-05-29 01:49:06.279][1941779][debug][client] [source/common/http/codec_client.cc:88] [C5] connected
+[2021-05-29 01:49:06.279][1941779][debug][pool] [source/common/conn_pool/conn_pool_base.cc:289] [C5] attaching to next stream
+[2021-05-29 01:49:06.279][1941779][debug][pool] [source/common/conn_pool/conn_pool_base.cc:175] [C5] creating stream
+[2021-05-29 01:49:06.279][1941779][debug][router] [source/common/router/upstream_request.cc:371] [C4][S9209915673678627209] pool ready
+[2021-05-29 01:49:06.279][1941779][debug][router] [source/common/router/router.cc:1229] [C4][S9209915673678627209] upstream headers complete: end_stream=false
+[2021-05-29 01:49:06.279][1941779][debug][http] [source/common/http/conn_manager_impl.cc:1472] [C4][S9209915673678627209] encoding headers via codec (end_stream=false):
+':status', '200'
+'date', 'Fri, 28 May 2021 17:49:06 GMT'
+'content-length', '12'
+'content-type', 'text/plain; charset=utf-8'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+
+[2021-05-29 01:49:06.279][1941779][debug][client] [source/common/http/codec_client.cc:130] [C5] response complete
+[2021-05-29 01:49:06.280][1941779][debug][pool] [source/common/http/http1/conn_pool.cc:53] [C5] response complete
+[2021-05-29 01:49:06.280][1941779][debug][pool] [source/common/conn_pool/conn_pool_base.cc:204] [C5] destroying stream: 0 remaining
+[2021-05-29 01:49:06.280][1941779][debug][connection] [source/common/network/connection_impl.cc:633] [C4] remote close
+[2021-05-29 01:49:06.280][1941779][debug][connection] [source/common/network/connection_impl.cc:243] [C4] closing socket: 0
+[2021-05-29 01:49:06.280][1941779][debug][conn_handler] [source/server/active_tcp_listener.cc:75] [C4] adding to cleanup list
+[2021-05-29 01:49:06.637][1941751][debug][upstream] [source/common/upstream/upstream_impl.cc:278] transport socket match, socket default selected for host with address 0.0.0.0:9001
+[2021-05-29 01:49:06.637][1941751][debug][upstream] [source/common/upstream/strict_dns_cluster.cc:170] DNS refresh rate reset for 0.0.0.0, refresh rate 5000 ms
+[2021-05-29 01:49:06.726][1941751][debug][main] [source/server/server.cc:216] flushing stats
+[2021-05-29 01:49:11.641][1941751][debug][upstream] [source/common/upstream/upstream_impl.cc:278] transport socket match, socket default selected for host with address 0.0.0.0:9001
+[2021-05-29 01:49:11.641][1941751][debug][upstream] [source/common/upstream/strict_dns_cluster.cc:170] DNS refresh rate reset for 0.0.0.0, refresh rate 5000 ms
+[2021-05-29 01:49:11.730][1941751][debug][main] [source/server/server.cc:216] flushing stats
+[2021-05-29 01:49:11.928][1941773][debug][conn_handler] [source/server/active_tcp_listener.cc:324] [C6] new connection
+[2021-05-29 01:49:11.928][1941773][debug][http] [source/common/http/conn_manager_impl.cc:261] [C6] new stream
+[2021-05-29 01:49:11.928][1941773][debug][http] [source/common/http/conn_manager_impl.cc:874] [C6][S2667099219191900088] request headers complete (end_stream=true):
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+
+[2021-05-29 01:49:11.928][1941773][debug][http] [source/common/http/filter_manager.cc:802] [C6][S2667099219191900088] request end stream
+[2021-05-29 01:49:11.928][1941773][debug][matcher] [bazel-out/k8-fastbuild/bin/source/common/matcher/_virtual_includes/exact_map_matcher_lib/common/matcher/exact_map_matcher.h:21] Attempting to match data input: test
+[2021-05-29 01:49:11.928][1941773][debug][router] [source/common/router/router.cc:445] [C6][S2667099219191900088] cluster 'httpbin' match for URL '/'
+[2021-05-29 01:49:11.928][1941773][debug][router] [source/common/router/router.cc:631] [C6][S2667099219191900088] router decoding headers:
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+':scheme', 'http'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+'x-forwarded-proto', 'http'
+'x-request-id', '3f7c3a18-56dc-4538-8aae-a6d6dbd43bf6'
+'x-envoy-expected-rq-timeout-ms', '15000'
+
+[2021-05-29 01:49:11.928][1941773][debug][pool] [source/common/http/conn_pool_base.cc:74] queueing stream due to no available connections
+[2021-05-29 01:49:11.928][1941773][debug][pool] [source/common/conn_pool/conn_pool_base.cc:245] trying to create new connection
+[2021-05-29 01:49:11.928][1941773][debug][pool] [source/common/conn_pool/conn_pool_base.cc:143] creating a new connection
+[2021-05-29 01:49:11.928][1941773][debug][client] [source/common/http/codec_client.cc:60] [C7] connecting
+[2021-05-29 01:49:11.928][1941773][debug][connection] [source/common/network/connection_impl.cc:860] [C7] connecting to 0.0.0.0:9001
+[2021-05-29 01:49:11.929][1941773][debug][connection] [source/common/network/connection_impl.cc:876] [C7] connection in progress
+[2021-05-29 01:49:11.929][1941773][debug][connection] [source/common/network/connection_impl.cc:665] [C7] connected
+[2021-05-29 01:49:11.929][1941773][debug][client] [source/common/http/codec_client.cc:88] [C7] connected
+[2021-05-29 01:49:11.929][1941773][debug][pool] [source/common/conn_pool/conn_pool_base.cc:289] [C7] attaching to next stream
+[2021-05-29 01:49:11.929][1941773][debug][pool] [source/common/conn_pool/conn_pool_base.cc:175] [C7] creating stream
+[2021-05-29 01:49:11.929][1941773][debug][router] [source/common/router/upstream_request.cc:371] [C6][S2667099219191900088] pool ready
+[2021-05-29 01:49:11.929][1941773][debug][router] [source/common/router/router.cc:1229] [C6][S2667099219191900088] upstream headers complete: end_stream=false
+[2021-05-29 01:49:11.929][1941773][debug][http] [source/common/http/conn_manager_impl.cc:1472] [C6][S2667099219191900088] encoding headers via codec (end_stream=false):
+':status', '200'
+'date', 'Fri, 28 May 2021 17:49:11 GMT'
+'content-length', '12'
+'content-type', 'text/plain; charset=utf-8'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+
+[2021-05-29 01:49:11.929][1941773][debug][client] [source/common/http/codec_client.cc:130] [C7] response complete
+[2021-05-29 01:49:11.930][1941773][debug][pool] [source/common/http/http1/conn_pool.cc:53] [C7] response complete
+[2021-05-29 01:49:11.930][1941773][debug][pool] [source/common/conn_pool/conn_pool_base.cc:204] [C7] destroying stream: 0 remaining
+[2021-05-29 01:49:11.930][1941773][debug][connection] [source/common/network/connection_impl.cc:633] [C6] remote close
+[2021-05-29 01:49:11.930][1941773][debug][connection] [source/common/network/connection_impl.cc:243] [C6] closing socket: 0
+[2021-05-29 01:49:11.930][1941773][debug][conn_handler] [source/server/active_tcp_listener.cc:75] [C6] adding to cleanup list
+[2021-05-29 01:49:12.898][1941775][debug][conn_handler] [source/server/active_tcp_listener.cc:324] [C8] new connection
+[2021-05-29 01:49:12.898][1941775][debug][http] [source/common/http/conn_manager_impl.cc:261] [C8] new stream
+[2021-05-29 01:49:12.898][1941775][debug][http] [source/common/http/conn_manager_impl.cc:874] [C8][S615776280375524882] request headers complete (end_stream=true):
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+
+[2021-05-29 01:49:12.898][1941775][debug][http] [source/common/http/filter_manager.cc:802] [C8][S615776280375524882] request end stream
+[2021-05-29 01:49:12.898][1941775][debug][matcher] [bazel-out/k8-fastbuild/bin/source/common/matcher/_virtual_includes/exact_map_matcher_lib/common/matcher/exact_map_matcher.h:21] Attempting to match data input: test
+[2021-05-29 01:49:12.898][1941775][debug][router] [source/common/router/router.cc:445] [C8][S615776280375524882] cluster 'httpbin' match for URL '/'
+[2021-05-29 01:49:12.899][1941775][debug][router] [source/common/router/router.cc:631] [C8][S615776280375524882] router decoding headers:
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+':scheme', 'http'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+'x-forwarded-proto', 'http'
+'x-request-id', 'df7673a9-805f-4e9d-8d30-3428fa78dcae'
+'x-envoy-expected-rq-timeout-ms', '15000'
+
+[2021-05-29 01:49:12.899][1941775][debug][pool] [source/common/conn_pool/conn_pool_base.cc:236] [C3] using existing connection
+[2021-05-29 01:49:12.899][1941775][debug][pool] [source/common/conn_pool/conn_pool_base.cc:175] [C3] creating stream
+[2021-05-29 01:49:12.899][1941775][debug][router] [source/common/router/upstream_request.cc:371] [C8][S615776280375524882] pool ready
+[2021-05-29 01:49:12.899][1941775][debug][router] [source/common/router/router.cc:1229] [C8][S615776280375524882] upstream headers complete: end_stream=false
+[2021-05-29 01:49:12.899][1941775][debug][http] [source/common/http/conn_manager_impl.cc:1472] [C8][S615776280375524882] encoding headers via codec (end_stream=false):
+':status', '200'
+'date', 'Fri, 28 May 2021 17:49:12 GMT'
+'content-length', '12'
+'content-type', 'text/plain; charset=utf-8'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+
+[2021-05-29 01:49:12.899][1941775][debug][client] [source/common/http/codec_client.cc:130] [C3] response complete
+[2021-05-29 01:49:12.899][1941775][debug][pool] [source/common/http/http1/conn_pool.cc:53] [C3] response complete
+[2021-05-29 01:49:12.899][1941775][debug][pool] [source/common/conn_pool/conn_pool_base.cc:204] [C3] destroying stream: 0 remaining
+[2021-05-29 01:49:12.900][1941775][debug][connection] [source/common/network/connection_impl.cc:633] [C8] remote close
+[2021-05-29 01:49:12.900][1941775][debug][connection] [source/common/network/connection_impl.cc:243] [C8] closing socket: 0
+[2021-05-29 01:49:12.900][1941775][debug][conn_handler] [source/server/active_tcp_listener.cc:75] [C8] adding to cleanup list
+[2021-05-29 01:49:13.619][1941775][debug][conn_handler] [source/server/active_tcp_listener.cc:324] [C9] new connection
+[2021-05-29 01:49:13.619][1941775][debug][http] [source/common/http/conn_manager_impl.cc:261] [C9] new stream
+[2021-05-29 01:49:13.619][1941775][debug][http] [source/common/http/conn_manager_impl.cc:874] [C9][S4796259039414829840] request headers complete (end_stream=true):
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+
+[2021-05-29 01:49:13.619][1941775][debug][http] [source/common/http/filter_manager.cc:802] [C9][S4796259039414829840] request end stream
+[2021-05-29 01:49:13.620][1941775][debug][matcher] [bazel-out/k8-fastbuild/bin/source/common/matcher/_virtual_includes/exact_map_matcher_lib/common/matcher/exact_map_matcher.h:21] Attempting to match data input: test
+[2021-05-29 01:49:13.620][1941775][debug][router] [source/common/router/router.cc:445] [C9][S4796259039414829840] cluster 'httpbin' match for URL '/'
+[2021-05-29 01:49:13.620][1941775][debug][router] [source/common/router/router.cc:631] [C9][S4796259039414829840] router decoding headers:
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+':scheme', 'http'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+'x-forwarded-proto', 'http'
+'x-request-id', 'c6f632c3-2e2e-4edb-9afa-af3e158a1ab9'
+'x-envoy-expected-rq-timeout-ms', '15000'
+
+[2021-05-29 01:49:13.620][1941775][debug][pool] [source/common/conn_pool/conn_pool_base.cc:236] [C3] using existing connection
+[2021-05-29 01:49:13.620][1941775][debug][pool] [source/common/conn_pool/conn_pool_base.cc:175] [C3] creating stream
+[2021-05-29 01:49:13.620][1941775][debug][router] [source/common/router/upstream_request.cc:371] [C9][S4796259039414829840] pool ready
+[2021-05-29 01:49:13.620][1941775][debug][router] [source/common/router/router.cc:1229] [C9][S4796259039414829840] upstream headers complete: end_stream=false
+[2021-05-29 01:49:13.620][1941775][debug][http] [source/common/http/conn_manager_impl.cc:1472] [C9][S4796259039414829840] encoding headers via codec (end_stream=false):
+':status', '200'
+'date', 'Fri, 28 May 2021 17:49:13 GMT'
+'content-length', '12'
+'content-type', 'text/plain; charset=utf-8'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+
+[2021-05-29 01:49:13.620][1941775][debug][client] [source/common/http/codec_client.cc:130] [C3] response complete
+[2021-05-29 01:49:13.621][1941775][debug][pool] [source/common/http/http1/conn_pool.cc:53] [C3] response complete
+[2021-05-29 01:49:13.621][1941775][debug][pool] [source/common/conn_pool/conn_pool_base.cc:204] [C3] destroying stream: 0 remaining
+[2021-05-29 01:49:13.621][1941775][debug][connection] [source/common/network/connection_impl.cc:633] [C9] remote close
+[2021-05-29 01:49:13.621][1941775][debug][connection] [source/common/network/connection_impl.cc:243] [C9] closing socket: 0
+[2021-05-29 01:49:13.621][1941775][debug][conn_handler] [source/server/active_tcp_listener.cc:75] [C9] adding to cleanup list
+[2021-05-29 01:49:14.274][1941771][debug][conn_handler] [source/server/active_tcp_listener.cc:324] [C10] new connection
+[2021-05-29 01:49:14.274][1941771][debug][http] [source/common/http/conn_manager_impl.cc:261] [C10] new stream
+[2021-05-29 01:49:14.274][1941771][debug][http] [source/common/http/conn_manager_impl.cc:874] [C10][S3407541023641779886] request headers complete (end_stream=true):
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+
+[2021-05-29 01:49:14.274][1941771][debug][http] [source/common/http/filter_manager.cc:802] [C10][S3407541023641779886] request end stream
+[2021-05-29 01:49:14.274][1941771][debug][matcher] [bazel-out/k8-fastbuild/bin/source/common/matcher/_virtual_includes/exact_map_matcher_lib/common/matcher/exact_map_matcher.h:21] Attempting to match data input: test
+[2021-05-29 01:49:14.274][1941771][debug][router] [source/common/router/router.cc:445] [C10][S3407541023641779886] cluster 'httpbin' match for URL '/'
+[2021-05-29 01:49:14.275][1941771][debug][router] [source/common/router/router.cc:631] [C10][S3407541023641779886] router decoding headers:
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+':scheme', 'http'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+'x-forwarded-proto', 'http'
+'x-request-id', '4e46ace6-36cd-4d8f-9057-5f1348318379'
+'x-envoy-expected-rq-timeout-ms', '15000'
+
+[2021-05-29 01:49:14.275][1941771][debug][pool] [source/common/conn_pool/conn_pool_base.cc:236] [C1] using existing connection
+[2021-05-29 01:49:14.275][1941771][debug][pool] [source/common/conn_pool/conn_pool_base.cc:175] [C1] creating stream
+[2021-05-29 01:49:14.275][1941771][debug][router] [source/common/router/upstream_request.cc:371] [C10][S3407541023641779886] pool ready
+[2021-05-29 01:49:14.275][1941771][debug][router] [source/common/router/router.cc:1229] [C10][S3407541023641779886] upstream headers complete: end_stream=false
+[2021-05-29 01:49:14.275][1941771][debug][http] [source/common/http/conn_manager_impl.cc:1472] [C10][S3407541023641779886] encoding headers via codec (end_stream=false):
+':status', '200'
+'date', 'Fri, 28 May 2021 17:49:14 GMT'
+'content-length', '12'
+'content-type', 'text/plain; charset=utf-8'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+
+[2021-05-29 01:49:14.275][1941771][debug][client] [source/common/http/codec_client.cc:130] [C1] response complete
+[2021-05-29 01:49:14.275][1941771][debug][pool] [source/common/http/http1/conn_pool.cc:53] [C1] response complete
+[2021-05-29 01:49:14.275][1941771][debug][pool] [source/common/conn_pool/conn_pool_base.cc:204] [C1] destroying stream: 0 remaining
+[2021-05-29 01:49:14.276][1941771][debug][connection] [source/common/network/connection_impl.cc:633] [C10] remote close
+[2021-05-29 01:49:14.276][1941771][debug][connection] [source/common/network/connection_impl.cc:243] [C10] closing socket: 0
+[2021-05-29 01:49:14.276][1941771][debug][conn_handler] [source/server/active_tcp_listener.cc:75] [C10] adding to cleanup list
+[2021-05-29 01:49:14.930][1941775][debug][conn_handler] [source/server/active_tcp_listener.cc:324] [C11] new connection
+[2021-05-29 01:49:14.930][1941775][debug][http] [source/common/http/conn_manager_impl.cc:261] [C11] new stream
+[2021-05-29 01:49:14.931][1941775][debug][http] [source/common/http/conn_manager_impl.cc:874] [C11][S12015363878251613498] request headers complete (end_stream=true):
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+
+[2021-05-29 01:49:14.931][1941775][debug][http] [source/common/http/filter_manager.cc:802] [C11][S12015363878251613498] request end stream
+[2021-05-29 01:49:14.931][1941775][debug][matcher] [bazel-out/k8-fastbuild/bin/source/common/matcher/_virtual_includes/exact_map_matcher_lib/common/matcher/exact_map_matcher.h:21] Attempting to match data input: test
+[2021-05-29 01:49:14.931][1941775][debug][router] [source/common/router/router.cc:445] [C11][S12015363878251613498] cluster 'httpbin' match for URL '/'
+[2021-05-29 01:49:14.931][1941775][debug][router] [source/common/router/router.cc:631] [C11][S12015363878251613498] router decoding headers:
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+':scheme', 'http'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+'x-forwarded-proto', 'http'
+'x-request-id', 'b0cfb42f-0d91-462a-89a4-a363c8fac85e'
+'x-envoy-expected-rq-timeout-ms', '15000'
+
+[2021-05-29 01:49:14.931][1941775][debug][pool] [source/common/conn_pool/conn_pool_base.cc:236] [C3] using existing connection
+[2021-05-29 01:49:14.931][1941775][debug][pool] [source/common/conn_pool/conn_pool_base.cc:175] [C3] creating stream
+[2021-05-29 01:49:14.931][1941775][debug][router] [source/common/router/upstream_request.cc:371] [C11][S12015363878251613498] pool ready
+[2021-05-29 01:49:14.932][1941775][debug][router] [source/common/router/router.cc:1229] [C11][S12015363878251613498] upstream headers complete: end_stream=false
+[2021-05-29 01:49:14.932][1941775][debug][http] [source/common/http/conn_manager_impl.cc:1472] [C11][S12015363878251613498] encoding headers via codec (end_stream=false):
+':status', '200'
+'date', 'Fri, 28 May 2021 17:49:14 GMT'
+'content-length', '12'
+'content-type', 'text/plain; charset=utf-8'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+
+[2021-05-29 01:49:14.932][1941775][debug][client] [source/common/http/codec_client.cc:130] [C3] response complete
+[2021-05-29 01:49:14.932][1941775][debug][pool] [source/common/http/http1/conn_pool.cc:53] [C3] response complete
+[2021-05-29 01:49:14.932][1941775][debug][pool] [source/common/conn_pool/conn_pool_base.cc:204] [C3] destroying stream: 0 remaining
+[2021-05-29 01:49:14.932][1941775][debug][connection] [source/common/network/connection_impl.cc:633] [C11] remote close
+[2021-05-29 01:49:14.932][1941775][debug][connection] [source/common/network/connection_impl.cc:243] [C11] closing socket: 0
+[2021-05-29 01:49:14.932][1941775][debug][conn_handler] [source/server/active_tcp_listener.cc:75] [C11] adding to cleanup list
+[2021-05-29 01:49:15.533][1941771][debug][conn_handler] [source/server/active_tcp_listener.cc:324] [C12] new connection
+[2021-05-29 01:49:15.533][1941771][debug][http] [source/common/http/conn_manager_impl.cc:261] [C12] new stream
+[2021-05-29 01:49:15.533][1941771][debug][http] [source/common/http/conn_manager_impl.cc:874] [C12][S11590862958649923774] request headers complete (end_stream=true):
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+
+[2021-05-29 01:49:15.533][1941771][debug][http] [source/common/http/filter_manager.cc:802] [C12][S11590862958649923774] request end stream
+[2021-05-29 01:49:15.533][1941771][debug][matcher] [bazel-out/k8-fastbuild/bin/source/common/matcher/_virtual_includes/exact_map_matcher_lib/common/matcher/exact_map_matcher.h:21] Attempting to match data input: test
+[2021-05-29 01:49:15.533][1941771][debug][router] [source/common/router/router.cc:445] [C12][S11590862958649923774] cluster 'httpbin' match for URL '/'
+[2021-05-29 01:49:15.533][1941771][debug][router] [source/common/router/router.cc:631] [C12][S11590862958649923774] router decoding headers:
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+':scheme', 'http'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+'x-forwarded-proto', 'http'
+'x-request-id', '54d20933-ce04-42df-a9fc-0cf96c20405c'
+'x-envoy-expected-rq-timeout-ms', '15000'
+
+[2021-05-29 01:49:15.533][1941771][debug][pool] [source/common/conn_pool/conn_pool_base.cc:236] [C1] using existing connection
+[2021-05-29 01:49:15.533][1941771][debug][pool] [source/common/conn_pool/conn_pool_base.cc:175] [C1] creating stream
+[2021-05-29 01:49:15.533][1941771][debug][router] [source/common/router/upstream_request.cc:371] [C12][S11590862958649923774] pool ready
+[2021-05-29 01:49:15.534][1941771][debug][router] [source/common/router/router.cc:1229] [C12][S11590862958649923774] upstream headers complete: end_stream=false
+[2021-05-29 01:49:15.534][1941771][debug][http] [source/common/http/conn_manager_impl.cc:1472] [C12][S11590862958649923774] encoding headers via codec (end_stream=false):
+':status', '200'
+'date', 'Fri, 28 May 2021 17:49:15 GMT'
+'content-length', '12'
+'content-type', 'text/plain; charset=utf-8'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+
+[2021-05-29 01:49:15.534][1941771][debug][client] [source/common/http/codec_client.cc:130] [C1] response complete
+[2021-05-29 01:49:15.534][1941771][debug][pool] [source/common/http/http1/conn_pool.cc:53] [C1] response complete
+[2021-05-29 01:49:15.534][1941771][debug][pool] [source/common/conn_pool/conn_pool_base.cc:204] [C1] destroying stream: 0 remaining
+[2021-05-29 01:49:15.534][1941771][debug][connection] [source/common/network/connection_impl.cc:633] [C12] remote close
+[2021-05-29 01:49:15.534][1941771][debug][connection] [source/common/network/connection_impl.cc:243] [C12] closing socket: 0
+[2021-05-29 01:49:15.534][1941771][debug][conn_handler] [source/server/active_tcp_listener.cc:75] [C12] adding to cleanup list
+[2021-05-29 01:49:16.174][1941779][debug][conn_handler] [source/server/active_tcp_listener.cc:324] [C13] new connection
+[2021-05-29 01:49:16.174][1941779][debug][http] [source/common/http/conn_manager_impl.cc:261] [C13] new stream
+[2021-05-29 01:49:16.174][1941779][debug][http] [source/common/http/conn_manager_impl.cc:874] [C13][S1558019904160791962] request headers complete (end_stream=true):
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+
+[2021-05-29 01:49:16.174][1941779][debug][http] [source/common/http/filter_manager.cc:802] [C13][S1558019904160791962] request end stream
+[2021-05-29 01:49:16.174][1941779][debug][matcher] [bazel-out/k8-fastbuild/bin/source/common/matcher/_virtual_includes/exact_map_matcher_lib/common/matcher/exact_map_matcher.h:21] Attempting to match data input: test
+[2021-05-29 01:49:16.174][1941779][debug][router] [source/common/router/router.cc:445] [C13][S1558019904160791962] cluster 'httpbin' match for URL '/'
+[2021-05-29 01:49:16.175][1941779][debug][router] [source/common/router/router.cc:631] [C13][S1558019904160791962] router decoding headers:
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+':scheme', 'http'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+'x-forwarded-proto', 'http'
+'x-request-id', 'ad2a58e9-8599-4cf1-9eb9-838de1c98151'
+'x-envoy-expected-rq-timeout-ms', '15000'
+
+[2021-05-29 01:49:16.175][1941779][debug][pool] [source/common/conn_pool/conn_pool_base.cc:236] [C5] using existing connection
+[2021-05-29 01:49:16.175][1941779][debug][pool] [source/common/conn_pool/conn_pool_base.cc:175] [C5] creating stream
+[2021-05-29 01:49:16.175][1941779][debug][router] [source/common/router/upstream_request.cc:371] [C13][S1558019904160791962] pool ready
+[2021-05-29 01:49:16.175][1941779][debug][router] [source/common/router/router.cc:1229] [C13][S1558019904160791962] upstream headers complete: end_stream=false
+[2021-05-29 01:49:16.175][1941779][debug][http] [source/common/http/conn_manager_impl.cc:1472] [C13][S1558019904160791962] encoding headers via codec (end_stream=false):
+':status', '200'
+'date', 'Fri, 28 May 2021 17:49:16 GMT'
+'content-length', '12'
+'content-type', 'text/plain; charset=utf-8'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+
+[2021-05-29 01:49:16.175][1941779][debug][client] [source/common/http/codec_client.cc:130] [C5] response complete
+[2021-05-29 01:49:16.175][1941779][debug][pool] [source/common/http/http1/conn_pool.cc:53] [C5] response complete
+[2021-05-29 01:49:16.175][1941779][debug][pool] [source/common/conn_pool/conn_pool_base.cc:204] [C5] destroying stream: 0 remaining
+[2021-05-29 01:49:16.176][1941779][debug][connection] [source/common/network/connection_impl.cc:633] [C13] remote close
+[2021-05-29 01:49:16.176][1941779][debug][connection] [source/common/network/connection_impl.cc:243] [C13] closing socket: 0
+[2021-05-29 01:49:16.176][1941779][debug][conn_handler] [source/server/active_tcp_listener.cc:75] [C13] adding to cleanup list
+[2021-05-29 01:49:16.644][1941751][debug][upstream] [source/common/upstream/upstream_impl.cc:278] transport socket match, socket default selected for host with address 0.0.0.0:9001
+[2021-05-29 01:49:16.644][1941751][debug][upstream] [source/common/upstream/strict_dns_cluster.cc:170] DNS refresh rate reset for 0.0.0.0, refresh rate 5000 ms
+[2021-05-29 01:49:16.728][1941751][debug][main] [source/server/server.cc:216] flushing stats
+[2021-05-29 01:49:16.804][1941774][debug][conn_handler] [source/server/active_tcp_listener.cc:324] [C14] new connection
+[2021-05-29 01:49:16.804][1941774][debug][http] [source/common/http/conn_manager_impl.cc:261] [C14] new stream
+[2021-05-29 01:49:16.804][1941774][debug][http] [source/common/http/conn_manager_impl.cc:874] [C14][S7387876865264350334] request headers complete (end_stream=true):
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+
+[2021-05-29 01:49:16.804][1941774][debug][http] [source/common/http/filter_manager.cc:802] [C14][S7387876865264350334] request end stream
+[2021-05-29 01:49:16.804][1941774][debug][matcher] [bazel-out/k8-fastbuild/bin/source/common/matcher/_virtual_includes/exact_map_matcher_lib/common/matcher/exact_map_matcher.h:21] Attempting to match data input: test
+[2021-05-29 01:49:16.804][1941774][debug][router] [source/common/router/router.cc:445] [C14][S7387876865264350334] cluster 'httpbin' match for URL '/'
+[2021-05-29 01:49:16.804][1941774][debug][router] [source/common/router/router.cc:631] [C14][S7387876865264350334] router decoding headers:
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+':scheme', 'http'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+'x-forwarded-proto', 'http'
+'x-request-id', 'f5f7b795-532d-4e6b-a7c0-a157b93ba1d5'
+'x-envoy-expected-rq-timeout-ms', '15000'
+
+[2021-05-29 01:49:16.804][1941774][debug][pool] [source/common/http/conn_pool_base.cc:74] queueing stream due to no available connections
+[2021-05-29 01:49:16.804][1941774][debug][pool] [source/common/conn_pool/conn_pool_base.cc:245] trying to create new connection
+[2021-05-29 01:49:16.804][1941774][debug][pool] [source/common/conn_pool/conn_pool_base.cc:143] creating a new connection
+[2021-05-29 01:49:16.805][1941774][debug][client] [source/common/http/codec_client.cc:60] [C15] connecting
+[2021-05-29 01:49:16.805][1941774][debug][connection] [source/common/network/connection_impl.cc:860] [C15] connecting to 0.0.0.0:9001
+[2021-05-29 01:49:16.805][1941774][debug][connection] [source/common/network/connection_impl.cc:876] [C15] connection in progress
+[2021-05-29 01:49:16.805][1941774][debug][connection] [source/common/network/connection_impl.cc:665] [C15] connected
+[2021-05-29 01:49:16.805][1941774][debug][client] [source/common/http/codec_client.cc:88] [C15] connected
+[2021-05-29 01:49:16.805][1941774][debug][pool] [source/common/conn_pool/conn_pool_base.cc:289] [C15] attaching to next stream
+[2021-05-29 01:49:16.805][1941774][debug][pool] [source/common/conn_pool/conn_pool_base.cc:175] [C15] creating stream
+[2021-05-29 01:49:16.805][1941774][debug][router] [source/common/router/upstream_request.cc:371] [C14][S7387876865264350334] pool ready
+[2021-05-29 01:49:16.805][1941774][debug][router] [source/common/router/router.cc:1229] [C14][S7387876865264350334] upstream headers complete: end_stream=false
+[2021-05-29 01:49:16.805][1941774][debug][http] [source/common/http/conn_manager_impl.cc:1472] [C14][S7387876865264350334] encoding headers via codec (end_stream=false):
+':status', '200'
+'date', 'Fri, 28 May 2021 17:49:16 GMT'
+'content-length', '12'
+'content-type', 'text/plain; charset=utf-8'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+
+[2021-05-29 01:49:16.805][1941774][debug][client] [source/common/http/codec_client.cc:130] [C15] response complete
+[2021-05-29 01:49:16.806][1941774][debug][pool] [source/common/http/http1/conn_pool.cc:53] [C15] response complete
+[2021-05-29 01:49:16.806][1941774][debug][pool] [source/common/conn_pool/conn_pool_base.cc:204] [C15] destroying stream: 0 remaining
+[2021-05-29 01:49:16.806][1941774][debug][connection] [source/common/network/connection_impl.cc:633] [C14] remote close
+[2021-05-29 01:49:16.806][1941774][debug][connection] [source/common/network/connection_impl.cc:243] [C14] closing socket: 0
+[2021-05-29 01:49:16.806][1941774][debug][conn_handler] [source/server/active_tcp_listener.cc:75] [C14] adding to cleanup list
+[2021-05-29 01:49:17.474][1941771][debug][conn_handler] [source/server/active_tcp_listener.cc:324] [C16] new connection
+[2021-05-29 01:49:17.474][1941771][debug][http] [source/common/http/conn_manager_impl.cc:261] [C16] new stream
+[2021-05-29 01:49:17.474][1941771][debug][http] [source/common/http/conn_manager_impl.cc:874] [C16][S3942471262470624608] request headers complete (end_stream=true):
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+
+[2021-05-29 01:49:17.474][1941771][debug][http] [source/common/http/filter_manager.cc:802] [C16][S3942471262470624608] request end stream
+[2021-05-29 01:49:17.474][1941771][debug][matcher] [bazel-out/k8-fastbuild/bin/source/common/matcher/_virtual_includes/exact_map_matcher_lib/common/matcher/exact_map_matcher.h:21] Attempting to match data input: test
+[2021-05-29 01:49:17.474][1941771][debug][router] [source/common/router/router.cc:445] [C16][S3942471262470624608] cluster 'httpbin' match for URL '/'
+[2021-05-29 01:49:17.474][1941771][debug][router] [source/common/router/router.cc:631] [C16][S3942471262470624608] router decoding headers:
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+':scheme', 'http'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+'x-forwarded-proto', 'http'
+'x-request-id', '82453405-5c29-4128-8122-1051698d683f'
+'x-envoy-expected-rq-timeout-ms', '15000'
+
+[2021-05-29 01:49:17.474][1941771][debug][pool] [source/common/conn_pool/conn_pool_base.cc:236] [C1] using existing connection
+[2021-05-29 01:49:17.474][1941771][debug][pool] [source/common/conn_pool/conn_pool_base.cc:175] [C1] creating stream
+[2021-05-29 01:49:17.474][1941771][debug][router] [source/common/router/upstream_request.cc:371] [C16][S3942471262470624608] pool ready
+[2021-05-29 01:49:17.475][1941771][debug][router] [source/common/router/router.cc:1229] [C16][S3942471262470624608] upstream headers complete: end_stream=false
+[2021-05-29 01:49:17.475][1941771][debug][http] [source/common/http/conn_manager_impl.cc:1472] [C16][S3942471262470624608] encoding headers via codec (end_stream=false):
+':status', '200'
+'date', 'Fri, 28 May 2021 17:49:17 GMT'
+'content-length', '12'
+'content-type', 'text/plain; charset=utf-8'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+
+[2021-05-29 01:49:17.475][1941771][debug][client] [source/common/http/codec_client.cc:130] [C1] response complete
+[2021-05-29 01:49:17.475][1941771][debug][pool] [source/common/http/http1/conn_pool.cc:53] [C1] response complete
+[2021-05-29 01:49:17.475][1941771][debug][pool] [source/common/conn_pool/conn_pool_base.cc:204] [C1] destroying stream: 0 remaining
+[2021-05-29 01:49:17.475][1941771][debug][connection] [source/common/network/connection_impl.cc:633] [C16] remote close
+[2021-05-29 01:49:17.475][1941771][debug][connection] [source/common/network/connection_impl.cc:243] [C16] closing socket: 0
+[2021-05-29 01:49:17.475][1941771][debug][conn_handler] [source/server/active_tcp_listener.cc:75] [C16] adding to cleanup list
+[2021-05-29 01:49:18.048][1941779][debug][conn_handler] [source/server/active_tcp_listener.cc:324] [C17] new connection
+[2021-05-29 01:49:18.049][1941779][debug][http] [source/common/http/conn_manager_impl.cc:261] [C17] new stream
+[2021-05-29 01:49:18.049][1941779][debug][http] [source/common/http/conn_manager_impl.cc:874] [C17][S13778121541792304581] request headers complete (end_stream=true):
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+
+[2021-05-29 01:49:18.049][1941779][debug][http] [source/common/http/filter_manager.cc:802] [C17][S13778121541792304581] request end stream
+[2021-05-29 01:49:18.049][1941779][debug][matcher] [bazel-out/k8-fastbuild/bin/source/common/matcher/_virtual_includes/exact_map_matcher_lib/common/matcher/exact_map_matcher.h:21] Attempting to match data input: test
+[2021-05-29 01:49:18.049][1941779][debug][router] [source/common/router/router.cc:445] [C17][S13778121541792304581] cluster 'httpbin' match for URL '/'
+[2021-05-29 01:49:18.049][1941779][debug][router] [source/common/router/router.cc:631] [C17][S13778121541792304581] router decoding headers:
+':authority', '127.0.0.1:18000'
+':path', '/'
+':method', 'GET'
+':scheme', 'http'
+'user-agent', 'curl/7.61.1'
+'accept', '*/*'
+'switch', 'wasm'
+'x-forwarded-proto', 'http'
+'x-request-id', 'c4d8864e-427b-4e5b-8636-ebe32c15a476'
+'x-envoy-expected-rq-timeout-ms', '15000'
+
+[2021-05-29 01:49:18.049][1941779][debug][pool] [source/common/conn_pool/conn_pool_base.cc:236] [C5] using existing connection
+[2021-05-29 01:49:18.049][1941779][debug][pool] [source/common/conn_pool/conn_pool_base.cc:175] [C5] creating stream
+[2021-05-29 01:49:18.049][1941779][debug][router] [source/common/router/upstream_request.cc:371] [C17][S13778121541792304581] pool ready
+[2021-05-29 01:49:18.050][1941779][debug][router] [source/common/router/router.cc:1229] [C17][S13778121541792304581] upstream headers complete: end_stream=false
+[2021-05-29 01:49:18.050][1941779][debug][http] [source/common/http/conn_manager_impl.cc:1472] [C17][S13778121541792304581] encoding headers via codec (end_stream=false):
+':status', '200'
+'date', 'Fri, 28 May 2021 17:49:18 GMT'
+'content-length', '12'
+'content-type', 'text/plain; charset=utf-8'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+
+[2021-05-29 01:49:18.050][1941779][debug][client] [source/common/http/codec_client.cc:130] [C5] response complete
+[2021-05-29 01:49:18.050][1941779][debug][pool] [source/common/http/http1/conn_pool.cc:53] [C5] response complete
+[2021-05-29 01:49:18.050][1941779][debug][pool] [source/common/conn_pool/conn_pool_base.cc:204] [C5] destroying stream: 0 remaining
+[2021-05-29 01:49:18.050][1941779][debug][connection] [source/common/network/connection_impl.cc:633] [C17] remote close
+[2021-05-29 01:49:18.050][1941779][debug][connection] [source/common/network/connection_impl.cc:243] [C17] closing socket: 0
+[2021-05-29 01:49:18.050][1941779][debug][conn_handler] [source/server/active_tcp_listener.cc:75] [C17] adding to cleanup list
+[2021-05-29 01:49:20.925][1941751][warning][main] [source/server/server.cc:715] caught SIGINT
+[2021-05-29 01:49:20.925][1941751][info][main] [source/server/server.cc:831] shutting down server instance
+[2021-05-29 01:49:20.925][1941751][info][main] [source/server/server.cc:883] Notifying 0 callback(s) with completion.
+[2021-05-29 01:49:20.925][1941751][info][main] [source/server/server.cc:777] main dispatch loop exited
+[2021-05-29 01:49:20.926][1941766][debug][main] [source/server/worker_impl.cc:139] worker exited dispatch loop
+[2021-05-29 01:49:20.926][1941766][debug][wasm] [source/extensions/common/wasm/wasm.cc:160] ~Wasm 9 remaining active
+[2021-05-29 01:49:20.926][1941766][debug][grpc] [source/common/grpc/google_async_client_impl.cc:40] Joining completionThread
+[2021-05-29 01:49:20.926][1941768][debug][grpc] [source/common/grpc/google_async_client_impl.cc:73] completionThread exiting
+[2021-05-29 01:49:20.926][1941766][debug][grpc] [source/common/grpc/google_async_client_impl.cc:42] Joined completionThread
+[2021-05-29 01:49:20.926][1941766][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:1094] shutting down thread local cluster manager
+[2021-05-29 01:49:20.926][1941767][debug][main] [source/server/worker_impl.cc:139] worker exited dispatch loop
+[2021-05-29 01:49:20.927][1941767][debug][wasm] [source/extensions/common/wasm/wasm.cc:160] ~Wasm 8 remaining active
+[2021-05-29 01:49:20.927][1941767][debug][grpc] [source/common/grpc/google_async_client_impl.cc:40] Joining completionThread
+[2021-05-29 01:49:20.927][1941770][debug][grpc] [source/common/grpc/google_async_client_impl.cc:73] completionThread exiting
+[2021-05-29 01:49:20.927][1941767][debug][grpc] [source/common/grpc/google_async_client_impl.cc:42] Joined completionThread
+[2021-05-29 01:49:20.927][1941767][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:1094] shutting down thread local cluster manager
+[2021-05-29 01:49:20.927][1941769][debug][main] [source/server/worker_impl.cc:139] worker exited dispatch loop
+[2021-05-29 01:49:20.927][1941769][debug][wasm] [source/extensions/common/wasm/wasm.cc:160] ~Wasm 7 remaining active
+[2021-05-29 01:49:20.928][1941769][debug][grpc] [source/common/grpc/google_async_client_impl.cc:40] Joining completionThread
+[2021-05-29 01:49:20.928][1941772][debug][grpc] [source/common/grpc/google_async_client_impl.cc:73] completionThread exiting
+[2021-05-29 01:49:20.928][1941769][debug][grpc] [source/common/grpc/google_async_client_impl.cc:42] Joined completionThread
+[2021-05-29 01:49:20.928][1941769][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:1094] shutting down thread local cluster manager
+[2021-05-29 01:49:20.928][1941771][debug][main] [source/server/worker_impl.cc:139] worker exited dispatch loop
+[2021-05-29 01:49:20.928][1941771][debug][wasm] [source/extensions/common/wasm/wasm.cc:160] ~Wasm 6 remaining active
+[2021-05-29 01:49:20.928][1941771][debug][grpc] [source/common/grpc/google_async_client_impl.cc:40] Joining completionThread
+[2021-05-29 01:49:20.928][1941778][debug][grpc] [source/common/grpc/google_async_client_impl.cc:73] completionThread exiting
+[2021-05-29 01:49:20.928][1941771][debug][grpc] [source/common/grpc/google_async_client_impl.cc:42] Joined completionThread
+[2021-05-29 01:49:20.928][1941771][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:1094] shutting down thread local cluster manager
+[2021-05-29 01:49:20.929][1941771][debug][connection] [source/common/network/connection_impl.cc:133] [C1] closing data_to_write=0 type=1
+[2021-05-29 01:49:20.929][1941771][debug][connection] [source/common/network/connection_impl.cc:243] [C1] closing socket: 1
+[2021-05-29 01:49:20.929][1941771][debug][client] [source/common/http/codec_client.cc:107] [C1] disconnect. resetting 0 pending requests
+[2021-05-29 01:49:20.929][1941771][debug][pool] [source/common/conn_pool/conn_pool_base.cc:407] [C1] client disconnected, failure reason: 
+[2021-05-29 01:49:20.929][1941773][debug][main] [source/server/worker_impl.cc:139] worker exited dispatch loop
+[2021-05-29 01:49:20.929][1941773][debug][wasm] [source/extensions/common/wasm/wasm.cc:160] ~Wasm 5 remaining active
+[2021-05-29 01:49:20.930][1941773][debug][grpc] [source/common/grpc/google_async_client_impl.cc:40] Joining completionThread
+[2021-05-29 01:49:20.930][1941777][debug][grpc] [source/common/grpc/google_async_client_impl.cc:73] completionThread exiting
+[2021-05-29 01:49:20.930][1941773][debug][grpc] [source/common/grpc/google_async_client_impl.cc:42] Joined completionThread
+[2021-05-29 01:49:20.930][1941773][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:1094] shutting down thread local cluster manager
+[2021-05-29 01:49:20.930][1941773][debug][connection] [source/common/network/connection_impl.cc:133] [C7] closing data_to_write=0 type=1
+[2021-05-29 01:49:20.930][1941773][debug][connection] [source/common/network/connection_impl.cc:243] [C7] closing socket: 1
+[2021-05-29 01:49:20.930][1941773][debug][client] [source/common/http/codec_client.cc:107] [C7] disconnect. resetting 0 pending requests
+[2021-05-29 01:49:20.930][1941773][debug][pool] [source/common/conn_pool/conn_pool_base.cc:407] [C7] client disconnected, failure reason: 
+[2021-05-29 01:49:20.930][1941774][debug][main] [source/server/worker_impl.cc:139] worker exited dispatch loop
+[2021-05-29 01:49:20.930][1941774][debug][wasm] [source/extensions/common/wasm/wasm.cc:160] ~Wasm 4 remaining active
+[2021-05-29 01:49:20.930][1941774][debug][grpc] [source/common/grpc/google_async_client_impl.cc:40] Joining completionThread
+[2021-05-29 01:49:20.930][1941776][debug][grpc] [source/common/grpc/google_async_client_impl.cc:73] completionThread exiting
+[2021-05-29 01:49:20.930][1941774][debug][grpc] [source/common/grpc/google_async_client_impl.cc:42] Joined completionThread
+[2021-05-29 01:49:20.930][1941774][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:1094] shutting down thread local cluster manager
+[2021-05-29 01:49:20.930][1941774][debug][connection] [source/common/network/connection_impl.cc:133] [C15] closing data_to_write=0 type=1
+[2021-05-29 01:49:20.931][1941774][debug][connection] [source/common/network/connection_impl.cc:243] [C15] closing socket: 1
+[2021-05-29 01:49:20.931][1941774][debug][client] [source/common/http/codec_client.cc:107] [C15] disconnect. resetting 0 pending requests
+[2021-05-29 01:49:20.931][1941774][debug][pool] [source/common/conn_pool/conn_pool_base.cc:407] [C15] client disconnected, failure reason: 
+[2021-05-29 01:49:20.931][1941775][debug][main] [source/server/worker_impl.cc:139] worker exited dispatch loop
+[2021-05-29 01:49:20.931][1941775][debug][wasm] [source/extensions/common/wasm/wasm.cc:160] ~Wasm 3 remaining active
+[2021-05-29 01:49:20.931][1941775][debug][grpc] [source/common/grpc/google_async_client_impl.cc:40] Joining completionThread
+[2021-05-29 01:49:20.931][1941780][debug][grpc] [source/common/grpc/google_async_client_impl.cc:73] completionThread exiting
+[2021-05-29 01:49:20.931][1941775][debug][grpc] [source/common/grpc/google_async_client_impl.cc:42] Joined completionThread
+[2021-05-29 01:49:20.931][1941775][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:1094] shutting down thread local cluster manager
+[2021-05-29 01:49:20.931][1941775][debug][connection] [source/common/network/connection_impl.cc:133] [C3] closing data_to_write=0 type=1
+[2021-05-29 01:49:20.931][1941775][debug][connection] [source/common/network/connection_impl.cc:243] [C3] closing socket: 1
+[2021-05-29 01:49:20.931][1941775][debug][client] [source/common/http/codec_client.cc:107] [C3] disconnect. resetting 0 pending requests
+[2021-05-29 01:49:20.931][1941775][debug][pool] [source/common/conn_pool/conn_pool_base.cc:407] [C3] client disconnected, failure reason: 
+[2021-05-29 01:49:20.932][1941779][debug][main] [source/server/worker_impl.cc:139] worker exited dispatch loop
+[2021-05-29 01:49:20.932][1941779][debug][wasm] [source/extensions/common/wasm/wasm.cc:160] ~Wasm 2 remaining active
+[2021-05-29 01:49:20.932][1941779][debug][grpc] [source/common/grpc/google_async_client_impl.cc:40] Joining completionThread
+[2021-05-29 01:49:20.932][1941781][debug][grpc] [source/common/grpc/google_async_client_impl.cc:73] completionThread exiting
+[2021-05-29 01:49:20.932][1941779][debug][grpc] [source/common/grpc/google_async_client_impl.cc:42] Joined completionThread
+[2021-05-29 01:49:20.932][1941779][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:1094] shutting down thread local cluster manager
+[2021-05-29 01:49:20.932][1941779][debug][connection] [source/common/network/connection_impl.cc:133] [C5] closing data_to_write=0 type=1
+[2021-05-29 01:49:20.932][1941779][debug][connection] [source/common/network/connection_impl.cc:243] [C5] closing socket: 1
+[2021-05-29 01:49:20.932][1941779][debug][client] [source/common/http/codec_client.cc:107] [C5] disconnect. resetting 0 pending requests
+[2021-05-29 01:49:20.932][1941779][debug][pool] [source/common/conn_pool/conn_pool_base.cc:407] [C5] client disconnected, failure reason: 
+[2021-05-29 01:49:20.933][1941751][debug][main] [source/server/server.cc:216] flushing stats
+[2021-05-29 01:49:20.934][1941751][debug][init] [source/common/init/watcher_impl.cc:31] ClusterImplBase destroyed
+[2021-05-29 01:49:20.934][1941751][debug][init] [source/common/init/watcher_impl.cc:31] init manager Cluster httpbin destroyed
+[2021-05-29 01:49:20.934][1941751][debug][wasm] [source/extensions/common/wasm/wasm.cc:160] ~Wasm 1 remaining active
+[2021-05-29 01:49:20.934][1941751][debug][wasm] [source/extensions/common/wasm/wasm.cc:160] ~Wasm 0 remaining active
+[2021-05-29 01:49:20.935][1941751][debug][grpc] [source/common/grpc/google_async_client_impl.cc:40] Joining completionThread
+[2021-05-29 01:49:20.935][1941756][debug][grpc] [source/common/grpc/google_async_client_impl.cc:73] completionThread exiting
+[2021-05-29 01:49:20.935][1941751][debug][grpc] [source/common/grpc/google_async_client_impl.cc:42] Joined completionThread
+[2021-05-29 01:49:20.935][1941751][debug][upstream] [source/common/upstream/cluster_manager_impl.cc:1094] shutting down thread local cluster manager
+[2021-05-29 01:49:20.935][1941751][info][main] [source/server/server.cc:823] exiting
+[2021-05-29 01:49:20.935][1941751][debug][init] [source/common/init/watcher_impl.cc:31] RunHelper destroyed
